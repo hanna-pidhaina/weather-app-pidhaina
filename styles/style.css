@@ -1,0 +1,144 @@
+body {
+  background-image: url(mountains.jpg);
+  font-family: "Changa", sans-serif;
+  background-size: cover;
+}
+.whole-page {
+  background: rgba(42, 113, 135, 0.8);
+  margin: 50px auto 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1100px;
+  min-width: fit-content;
+}
+.upper-area {
+  padding: 30px;
+}
+.city-proposed {
+  font-size: 20px;
+  color: white;
+}
+#city-input {
+  border-radius: 4px;
+  border-color: white;
+}
+
+.submit-button, .current-location-button {
+  border: solid;
+  border-color: white;
+  background: transparent;
+  padding: 0px 20px;
+  border-radius: 4px;
+  color: white;
+}
+.submit-button:hover {
+  background: rgb(30, 79, 94);
+  
+}
+.current-location-button:hover {
+  background: rgb(30, 79, 94);
+  
+}
+
+.search-icon {
+  color: white;
+}
+.search-icon:hover {
+  transform: scale(1.2);
+}
+.current-location {
+  color: white;
+  margin-top: 0;
+}
+.main-area {
+  padding: 50px 20px;
+  max-width: 700px;
+  margin: auto;
+}
+.table-icon {
+  width: 20%;
+}
+.table-data {
+  width: 40%;
+}
+.table-image {
+  width: 40%;
+  min-width: 200px;
+}
+h3,
+h1 {
+  color: white;
+}
+#celsius, #fahrenheit {
+  color: grey;
+  text-decoration: none;
+}
+#celsius:focus, #fahrenheit:focus {
+  color: #FEBC75;
+} 
+#celsius:focus-visible {
+  outline-style: none;
+}
+.current-day-list {
+  list-style: none;
+  padding: 0;
+}
+img {
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: block;
+}
+td {
+  text-align: center;
+}
+.bottom-area {
+  padding: 20px 0 100px;
+}
+.day-list {
+  list-style: none;
+  text-align: center;
+  padding: 10px 20px;
+}
+.weather-icon {
+  border-radius: 90px;
+  border: solid;
+  padding: 15px;
+  color: white;
+  font-size: 50px;
+}
+.comming-days .btn {
+  background: rgb(101, 153, 175, 0.8);
+  text-align: center;
+  border: none;
+  padding: 20px 30px;
+  margin: 0 0 5px 0;
+}
+.comming-days .btn:hover {
+  border: none;
+  transform: scale(1.1);
+}
+.comming-days {
+  display: inline-block;
+}
+.day {
+  color: #b16b29;
+}
+.night {
+  color: #010038;
+}
+.day-weather-icon {
+  color: white;
+}
+.days-icon {
+  color: white;
+  font-size: 20px;
+}
+.footer {
+  margin: auto;
+  color: white;
+  text-align: center;
+  background-color: rgb(42, 113, 135, 0.8);
+  padding: 10px;
+  width: fit-content;
+}

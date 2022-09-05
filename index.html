@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/eaf4b1dfd4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container whole-page">
+      <div class="container text-center">
+        <div class="row upper-area">
+          <div class="col">
+            <a class="city-proposed" id="lisbon" href=""> Lisbon </a>
+          </div>
+          <div class="col">
+            <a class="city-proposed" href=""> Kyiv </a>
+          </div>
+          <div class="col">
+            <a class="city-proposed" href=""> Rom </a>
+          </div>
+          <div class="col">
+             <button class="current-location-button">Current location</button>
+          </div>
+          <div class="col-md-5 col-sm-6">
+            <form id="search-city">
+              <input type="text" id="city-input" autocomplete="off" />
+              <button type="submit" class="submit-button">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              </button>
+             
+            </form>
+            <label class="current-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Type city name
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="main-area">
+        <table class="table-borderless align-middle">
+          <tbody>
+            <tr>
+              <td class="table-icon">
+                <i class="fa-solid fa-cloud-rain weather-icon"></i>
+              </td>
+              <td class="table-data">
+                <em id="current-time">Day, date, time</em>
+                <h3>Current city</h3>
+                <h1><span id="temp"> </span></h1>
+                <ul class="current-day-list">
+                  <em
+                    ><li id="precipitation">Precipitation</li>
+                    <li id="wind">Wind</li>
+                    <li id="humidity">Humidity</li></em
+                  >
+                </ul>
+              </td>
+              <td class="table-image">
+                <img src="images/rain.jpg" width="100%" alt="sunny weather" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container text-center bottom-area">
+        <div class="btn-group comming-days">
+          <a href="#" class="btn day1">
+            <ul class="day-list">
+              <li>day1</li>
+              <li><i class="fa-solid fa-sun days-icon"></i></li>
+              <li class="day">T°C day</li>
+              <li class="night">T°C night</li>
+            </ul>
+          </a>
+          <a href="#" class="btn day2">
+            <ul class="day-list">
+              <li>day2</li>
+              <li><i class="fa-solid fa-cloud-sun days-icon"></i></li>
+              <li class="day">T°C day</li>
+              <li class="night">T°C night</li>
+            </ul>
+          </a>
+          <a href="#" class="btn day3">
+            <ul class="day-list">
+              <li>day3</li>
+              <li><i class="fa-solid fa-cloud-showers-heavy days-icon"></i></li>
+              <li class="day">T°C day</li>
+              <li class="night">T°C night</li>
+            </ul>
+          </a>
+          <a href="#" class="btn day4">
+            <ul class="day-list">
+              <li>day4</li>
+              <li><i class="fa-solid fa-cloud-sun-rain days-icon"></i></li>
+              <li class="day">T°C day</li>
+              <li class="night">T°C night</li>
+            </ul>
+          </a>
+          <a href="#" class="btn day5">
+            <ul class="day-list">
+              <li>day5</li>
+              <li><i class="fa-solid fa-cloud-sun-rain days-icon"></i></li>
+              <li class="day">T°C day</li>
+              <li class="night">T°C night</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </div>
+        <div class="footer"><a href="https://github.com/hanna-pidhaina/weather-app-pidhaina" target="_blank">Open source code </a> by Hanna Pidhaina</div>
+    <script src="script/week3.js"></script>
+  </body>
+</html>
