@@ -1,0 +1,77 @@
+Thunderstorm
+day
+<i class="fa-solid fa-cloud-bolt"></i>
+night
+<i class="fa-solid fa-cloud-bolt-moon"></i>
+
+
+Drizzle
+<i class="fa-solid fa-cloud-drizzle"></i>
+
+Rain (light)
+id=500, 501
+day
+<i class="fa-solid fa-cloud-sun-rain"></i>
+night
+<i class="fa-solid fa-cloud-moon-rain"></i>
+
+Rain
+id=502-504, 511
+<i class="fa-solid fa-cloud-rain"></i>
+Rain
+id=520, 521
+<i class="fa-solid fa-cloud-showers"></i>
+Rain
+id=522, 531
+<i class="fa-solid fa-cloud-showers-heavy"></i>
+
+Snow
+<i class="fa-solid fa-snowflake"></i>
+
+Mist, fog
+<i class="fa-solid fa-cloud-fog"></i>
+
+Smoke
+<i class="fa-solid fa-smoke"></i>
+
+Haze
+<i class="fa-solid fa-sun-haze"></i>
+
+Dust, sand, ash
+<i class="fa-solid fa-sun-dust"></i>
+
+Squall
+<i class="fa-solid fa-wind-warning"></i>
+
+Tornado
+<i class="fa-sharp fa-solid fa-tornado"></i>
+
+Clear
+day
+<i class="fa-solid fa-sun"></i>
+night
+<i class="fa-solid fa-moon"></i>
+
+Clouds
+id=801
+day
+<i class="fa-solid fa-sun-cloud"></i>
+night
+<i class="fa-solid fa-moon-cloud"></i>
+
+
+
+Clouds
+id=802
+day
+<i class="fa-solid fa-clouds-sun"></i>
+night
+<i class="fa-solid fa-clouds-moon"></i>
+
+Clouds
+id=803
+<i class="fa-solid fa-cloud"></i>
+
+Clouds
+id=804
+<i class="fa-solid fa-clouds"></i>

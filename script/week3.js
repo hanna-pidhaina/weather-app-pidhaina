@@ -25,6 +25,7 @@ time.innerHTML = `${day}, ${month} ${date}, ${hour}:${minute}`;
   axios.get(apiUrlDisplayed).then(showWeather);
 
 
+
 function showCity(event) {
   event.preventDefault();
   let currentCityInput = document.querySelector("#city-input");
@@ -37,6 +38,7 @@ searchCity.addEventListener("submit", showCity);
 
 
 function showWeather (response){
+
   let cityName = document.querySelector("h3");
   cityName.innerHTML = response.data.name;
 
@@ -58,6 +60,7 @@ function getPosition (position){
   let longitude = position.coords.longitude;
   let apiUrlCurrent = `${apiUrl}&lat=${latitude}&lon=${longitude}`;
   axios.get(apiUrlCurrent).then(showWeather);
+
 }
 function showCurrentLocation (){
 navigator.geolocation.getCurrentPosition(getPosition);

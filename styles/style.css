@@ -83,7 +83,7 @@ h1 {
   list-style: none;
   padding: 0;
 }
-img {
+.main-weather-image {
   border-radius: 15px;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
   width: 100%;
