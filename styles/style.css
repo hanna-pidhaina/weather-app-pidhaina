@@ -14,10 +14,11 @@ body {
 .upper-area {
   padding: 30px;
 }
-.city-proposed {
-  font-size: 20px;
+#current-time {
   color: white;
+  text-decoration: none;
 }
+
 #city-input {
   border-radius: 4px;
   border-color: white;

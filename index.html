@@ -30,16 +30,7 @@
       <div class="container text-center">
         <div class="row upper-area">
           <div class="col">
-            <a class="city-proposed" id="lisbon" href=""> Lisbon </a>
-          </div>
-          <div class="col">
-            <a class="city-proposed" href=""> Kyiv </a>
-          </div>
-          <div class="col">
-            <a class="city-proposed" href=""> Rom </a>
-          </div>
-          <div class="col">
-             <button class="current-location-button">Current location</button>
+            <span id="current-time"></span>
           </div>
           <div class="col-md-5 col-sm-6">
             <form id="search-city">
@@ -47,12 +38,15 @@
               <button type="submit" class="submit-button">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
               </button>
-             
+              
             </form>
             <label class="current-location">
               <i class="fa-solid fa-location-dot"></i>
               Type city name
             </label>
+          </div>
+          <div class="col">
+             <button class="current-location-button">Show weather <br/> at my current location</button>
           </div>
         </div>
       </div>
@@ -64,7 +58,7 @@
                 <i class="fa-solid fa-cloud-rain weather-icon"></i>
               </td>
               <td class="table-data">
-                <em id="current-time">Day, date, time</em>
+                
                 <h3>Current city</h3>
                 <h1><span id="temp"> </span></h1>
                 <ul class="current-day-list">
