@@ -75,3 +75,79 @@ id=803
 Clouds
 id=804
 <i class="fa-solid fa-clouds"></i>
+
+
+
+function weatherIcon() {
+  let mainIcon = document.querySelector("#main-icon");
+  let response.data.weather[0].main = weatherDescription;
+  let response.data.weather[0].id = weatherId;
+  let sunrise = response.data.sys.sunrise;
+  let sunset = response.data.sys.sunset;
+  let unixTime = Math.roun(Date.now()/1000);
+
+  if (weatherDescription === "Thunderstorm" && sunrise < unixTime < sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-bolt"></i>;
+  }
+  if (weatherDescription === "Thunderstorm" && unixTime > sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-bolt-moon"></i>;
+  }
+  if (weatherDescription === "Drizzle") {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-drizzle"></i>;
+  }
+  if ([500, 501].includes(weatherId) && sunrise < unixTime < sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-sun-rain"></i>;
+  }
+  if ([500, 501].includes(weatherId)  && unixTime > sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-moon-rain"></i>;
+  }
+  if ([502, 503, 504, 511].includes(weatherId)) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-rain"></i>;
+  }
+  if ([520, 521].includes(weatherId)) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-showers"></i>;
+  }
+  if ([522, 531].includes(weatherId)) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-showers-heavy"></i>;
+  }
+ if (weatherDescription === "Snow") {
+    mainIcon.innerHTML = <i class="fa-solid fa-snowflake"></i>;
+  }
+
+ if ([Mist, Fog].includes(weatherDescription)) {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud-fog"></i>;
+  }
+   if (weatherDescription === "Smoke") {
+    mainIcon.innerHTML = <i class="fa-solid fa-smoke"></i>;
+  }
+   if (weatherDescription === "Haze") {
+    mainIcon.innerHTML = <i class="fa-solid fa-sun-haze"></i>;
+  }
+  if ([Dust, Sand, Ash].includes(weatherDescription)) {
+    mainIcon.innerHTML = <i class="fa-solid fa-sun-dust"></i>;
+  }
+    if (weatherDescription === "Squall") {
+    mainIcon.innerHTML = <i class="fa-solid fa-wind-warning"></i>;
+  }
+    if (weatherDescription === "Tornado") {
+    mainIcon.innerHTML = <i class="fa-sharp fa-solid fa-tornado"></i>;
+  }
+  if (weatherDescription === "Clear" && sunrise < unixTime < sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-sun-cloud"></i>;
+  }
+  if (weatherDescription === "Clear" && unixTime > sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-moon"></i>;
+  }
+  if (weatherId === "801" && sunrise < unixTime < sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-clouds-sun"></i>;
+  }
+  if (weatherId === "801" && unixTime > sunset ) {
+    mainIcon.innerHTML = <i class="fa-solid fa-clouds-moon"></i>;
+  }
+  if (weatherId === "803") {
+    mainIcon.innerHTML = <i class="fa-solid fa-cloud"></i>;
+  }
+  if (weatherId === "804") {
+    mainIcon.innerHTML = <i class="fa-solid fa-clouds"></i>;
+  }
+}
