@@ -38,7 +38,6 @@
               <button type="submit" class="submit-button">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
               </button>
-              
             </form>
             <label class="current-location">
               <i class="fa-solid fa-location-dot"></i>
@@ -46,7 +45,10 @@
             </label>
           </div>
           <div class="col">
-             <button class="current-location-button">Show weather <br/> at my current location</button>
+            <button class="current-location-button">
+              Show weather <br />
+              at my current location
+            </button>
           </div>
         </div>
       </div>
@@ -55,12 +57,17 @@
           <tbody>
             <tr>
               <td class="table-icon">
-                <div id="main-icon"></div><i class="fa-solid fa-cloud-rain weather-icon"></i>
+                <div class="circle">
+                <div id="main-icon" class = "weather-icon"></div>         
+                </div>  
               </td>
               <td class="table-data">
-                
                 <h3>Current city</h3>
-                <h1><span id="temp"> </span> <a href="" id="celsius" class="active celsius-position">°C</a> <a href="" id="fahrenheit" class="fahrenheit-position">°F</a></h1>
+                <h1>
+                  <span id="temp"> </span>
+                  <a href="" id="celsius" class="active celsius-position">°C</a>
+                  <a href="" id="fahrenheit" class="fahrenheit-position">°F</a>
+                </h1>
                 <ul class="current-day-list">
                   <em
                     ><li id="precipitation">Precipitation</li>
@@ -70,7 +77,12 @@
                 </ul>
               </td>
               <td class="table-image">
-                <img class="main-weather-image" src="images/rain.jpg" width="100%" alt="rainy weather" />
+                <img
+                  class="main-weather-image"
+                  src="images/rain.jpg"
+                  width="100%"
+                  alt="rainy weather"
+                />
               </td>
             </tr>
           </tbody>
@@ -121,7 +133,14 @@
         </div>
       </div>
     </div>
-        <div class="footer"><a href="https://github.com/hanna-pidhaina/weather-app-pidhaina" target="_blank">Open source code </a> by Hanna Pidhaina</div>
+    <div class="footer">
+      <a
+        href="https://github.com/hanna-pidhaina/weather-app-pidhaina"
+        target="_blank"
+        >Open source code
+      </a>
+      by Hanna Pidhaina
+    </div>
     <script src="script/week3.js"></script>
   </body>
 </html>

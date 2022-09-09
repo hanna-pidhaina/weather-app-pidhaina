@@ -151,3 +151,4 @@ function weatherIcon() {
     mainIcon.innerHTML = <i class="fa-solid fa-clouds"></i>;
   }
 }
+
