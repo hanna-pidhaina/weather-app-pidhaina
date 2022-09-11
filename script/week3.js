@@ -50,12 +50,7 @@ function showCity(event) {
   search(currentCityInput.value);
 }
 
-let searchCity = document.querySelector("#search-city");
-searchCity.addEventListener("submit", showCity);
-
 function showWeather(response) {
-  console.log(response.data);
-
   let cityName = document.querySelector("h3");
   cityName.innerHTML = response.data.name;
 
@@ -71,54 +66,45 @@ function showWeather(response) {
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity ${response.data.main.humidity} %`;
-  console.log(response.data.weather[0].id);
-  console.log(Math.round(Date.now() / 1000));
-  console.log(response.data.sys.sunset);
 
   let mainIcon = document.querySelector("#main-icon");
   let weatherIcon = response.data.weather[0].icon;
-  let sunrise = response.data.sys.sunrise;
-  let sunset = response.data.sys.sunset;
-  let unixTime = Math.round(Date.now() / 1000);
-
-   //let {icon} = conds.find((x) => x.cond);
-//mainIcon.innerHTML = `<i class="fa-solid ${icon}"></i>`;
+  
   if (weatherIcon === "01d") {
-    mainIcon.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    description = "sun";
   }
   else if (weatherIcon === "01n") {
-     mainIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+     description = "moon";
   }
   else if (weatherIcon === "02d") {
-     mainIcon.innerHTML = `<i class="fa-solid fa-cloud-sun"></i>`;
+      description = "cloud-sun";
   }
   else if (weatherIcon === "02n") {
-     mainIcon.innerHTML = `<i class="fa-solid fa-cloud-moon"></i>`;
+       description = "cloud-moon";
   }
-  else if (["03d", "03n"].includes(weatherIcon)) {
-    mainIcon.innerHTML = `<i class="fa-solid fa-cloud"></i>`;
-  }
-  else if (["04d", "04n"].includes(weatherIcon)) {
-    mainIcon.innerHTML = `<i class="fa-solid fa-cloud"></i>`;
+  else if (["03d", "03n", "04d", "04n"].includes(weatherIcon)) {
+      description = "cloud";
   }
   else if (["09d", "09n"].includes(weatherIcon)) {
-    mainIcon.innerHTML = `<i class="fa-solid fa-cloud-rain"></i>`;
+      description = "cloud-rain";
   }
   else if (weatherIcon === "10d") {
-     mainIcon.innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i>`;
+       description = "cloud-sun-rain";
   }
   else if (weatherIcon === "10n") {
-     mainIcon.innerHTML = `<i class="fa-solid fa-cloud-moon-rain"></i>`;
+       description = "cloud-moon-rain";
   }
   else if (["11d", "11n"].includes(weatherIcon)) {
-    mainIcon.innerHTML = `<i class="fa-solid fa-cloud-bolt"></i>`;
+      description = "cloud-bolt";
   }
   else if (["13d", "13n"].includes(weatherIcon)) {
-    mainIcon.innerHTML = `<i class="fa-solid fa-snowflake"></i>`;
+      description = "snowflake";
   }
    else {
-    mainIcon.innerHTML = `<i class="fa-solid fa-smog"></i>`;
+      description = "smog";
   }
+  let fontAw = `<i class="fa-solid fa-${description}"></i>`;
+  mainIcon.innerHTML = fontAw;
 
 }
 
@@ -129,11 +115,10 @@ function getPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&lat=${latitude}&lon=${longitude}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+
 function showCurrentLocation() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
-let currentLocation = document.querySelector(".current-location-button");
-currentLocation.addEventListener("click", showCurrentLocation);
 
 function changeToC(event) {
   event.preventDefault();
@@ -142,8 +127,6 @@ function changeToC(event) {
   let currentTemperature = document.querySelector("#temp");
   currentTemperature.innerHTML = celsiusTemperature;
 }
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeToC);
 
 function changeToF(event) {
   event.preventDefault();
@@ -152,6 +135,16 @@ function changeToF(event) {
   let currentTemperature = document.querySelector("#temp");
   currentTemperature.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
 }
+
+let searchCity = document.querySelector("#search-city");
+searchCity.addEventListener("submit", showCity);
+
+let currentLocation = document.querySelector(".current-location-button");
+currentLocation.addEventListener("click", showCurrentLocation);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeToC);
+
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToF);
 search("Kyiv");
