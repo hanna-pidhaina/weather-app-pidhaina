@@ -145,7 +145,7 @@ td {
   display: inline-block;
 }
 .day {
-  color: #b16b29;
+  color: lightblue;
 }
 .night {
   color: #010038;
@@ -165,3 +165,9 @@ td {
   padding: 10px;
   width: fit-content;
 }
+ a {
+  color: lightblue;
+ }
+ a:hover {
+  color: lightskyblue
+ }
