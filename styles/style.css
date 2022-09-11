@@ -1,7 +1,11 @@
 body {
-  background-image: url(mountains.jpg);
   font-family: "Changa", sans-serif;
   background-size: cover;
+}
+.light {
+  background-image: url(light.jpg);
+}
+.dark {background-image: url(dark.jpg);
 }
 .whole-page {
   background: rgba(42, 113, 135, 0.8);

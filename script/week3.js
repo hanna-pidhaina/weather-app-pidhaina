@@ -154,3 +154,10 @@ celsius.addEventListener("click", changeToC);
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToF);
 search("Kyiv");
+
+let bodyBack = document.querySelector ("body");
+if (hour > 21 && hour < 6) {
+  bodyBack.classList.add("dark");
+}
+else { bodyBack.classList.add("light"); }
+
