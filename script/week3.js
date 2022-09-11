@@ -69,6 +69,8 @@ function showWeather(response) {
 
   let mainIcon = document.querySelector("#main-icon");
   let weatherIcon = response.data.weather[0].icon;
+
+  let weatherImg = document.querySelector("#weather-image");
   
   if (weatherIcon === "01d") {
     description = "sun";
@@ -105,6 +107,10 @@ function showWeather(response) {
   }
   let fontAw = `<i class="fa-solid fa-${description}"></i>`;
   mainIcon.innerHTML = fontAw;
+
+  let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
+  weatherImg.innerHTML = imageSource;
+  
 
 }
 
