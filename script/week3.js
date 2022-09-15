@@ -44,11 +44,12 @@ function getDay (unix) {
 }
 
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class = "row">`;
-  let forecastDays = ["Mon", "Tue", "Wed", "Thu"];
   forecastData.forEach(function(forecastDay, index){
+    showIcon(forecastDay.weather[0].icon);
     if (index < 5) {
 
     forecastHTML =
@@ -56,12 +57,12 @@ function displayForecast(response) {
       `<div class="col">
         <ul class="day-list">
           <li>${getDay(forecastDay.dt)}</li>
-          <li><i class="fa-solid fa-sun days-icon"></i></li>
+          <li class = "day-weather-icon"><i class="fa-solid fa-${description}"></i></li>
           <li class="day">${Math.round(forecastDay.temp.max)}</li>
           <li class="night">${Math.round(forecastDay.temp.min)}</li>
         </ul>
-      </div>`;
-    };
+      </div>`; 
+    }
   });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
@@ -106,8 +107,19 @@ function showWeather(response) {
 
   let mainIcon = document.querySelector("#main-icon");
   let weatherIcon = response.data.weather[0].icon;
-
   let weatherImg = document.querySelector("#weather-image");
+
+  showIcon(weatherIcon);
+
+  let fontAw = `<i class="fa-solid fa-${description}"></i>`;
+  mainIcon.innerHTML = fontAw;
+  let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
+  weatherImg.innerHTML = imageSource;
+
+  getForecast (response.data.coord);
+}
+
+function showIcon (weatherIcon) {
 
   if (weatherIcon === "01d") {
     description = "sun";
@@ -132,14 +144,9 @@ function showWeather(response) {
   } else {
     description = "smog";
   }
-  let fontAw = `<i class="fa-solid fa-${description}"></i>`;
-  mainIcon.innerHTML = fontAw;
-
-  let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
-  weatherImg.innerHTML = imageSource;
-
-  getForecast (response.data.coord);
+ 
 }
+
 
 
 function getPosition(position) {
