@@ -37,7 +37,8 @@ if (minute < 10) {
 }
 time.innerHTML = `${day}, ${month} ${date}, ${hour}:${minute}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log (response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class = "row">`;
   let forecastDays = ["Mon", "Tue", "Wed", "Thu"];
@@ -57,6 +58,11 @@ function displayForecast() {
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  let apiKey = "3c949ba49d38be2487ee278e0d2d4059";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function search(city) {
   let units = "metric";
@@ -70,6 +76,8 @@ function showCity(event) {
   let currentCityInput = document.querySelector("#city-input");
   search(currentCityInput.value);
 }
+
+
 
 function showWeather(response) {
   let cityName = document.querySelector("h3");
@@ -121,7 +129,10 @@ function showWeather(response) {
 
   let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
   weatherImg.innerHTML = imageSource;
+
+  getForecast (response.data.coord);
 }
+
 
 function getPosition(position) {
   let latitude = position.coords.latitude;
@@ -172,4 +183,3 @@ if (hour > 21 && hour < 6) {
 }
 
 search("Kyiv");
-displayForecast();
