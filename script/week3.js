@@ -37,6 +37,27 @@ if (minute < 10) {
 }
 time.innerHTML = `${day}, ${month} ${date}, ${hour}:${minute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class = "row">`;
+  let forecastDays = ["Mon", "Tue", "Wed", "Thu"];
+  forecastDays.forEach(function(day){
+
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <ul class="day-list">
+          <li>${day}</li>
+          <li><i class="fa-solid fa-sun days-icon"></i></li>
+          <li class="day">T°C day</li>
+          <li class="night">T°C night</li>
+        </ul>
+      </div>`;
+  });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let units = "metric";
   let apiKey = "a3a670287c6f4b3ee8710439a67cc382";
@@ -71,47 +92,35 @@ function showWeather(response) {
   let weatherIcon = response.data.weather[0].icon;
 
   let weatherImg = document.querySelector("#weather-image");
-  
+
   if (weatherIcon === "01d") {
     description = "sun";
-  }
-  else if (weatherIcon === "01n") {
-     description = "moon";
-  }
-  else if (weatherIcon === "02d") {
-      description = "cloud-sun";
-  }
-  else if (weatherIcon === "02n") {
-       description = "cloud-moon";
-  }
-  else if (["03d", "03n", "04d", "04n"].includes(weatherIcon)) {
-      description = "cloud";
-  }
-  else if (["09d", "09n"].includes(weatherIcon)) {
-      description = "cloud-rain";
-  }
-  else if (weatherIcon === "10d") {
-       description = "cloud-sun-rain";
-  }
-  else if (weatherIcon === "10n") {
-       description = "cloud-moon-rain";
-  }
-  else if (["11d", "11n"].includes(weatherIcon)) {
-      description = "cloud-bolt";
-  }
-  else if (["13d", "13n"].includes(weatherIcon)) {
-      description = "snowflake";
-  }
-   else {
-      description = "smog";
+  } else if (weatherIcon === "01n") {
+    description = "moon";
+  } else if (weatherIcon === "02d") {
+    description = "cloud-sun";
+  } else if (weatherIcon === "02n") {
+    description = "cloud-moon";
+  } else if (["03d", "03n", "04d", "04n"].includes(weatherIcon)) {
+    description = "cloud";
+  } else if (["09d", "09n"].includes(weatherIcon)) {
+    description = "cloud-rain";
+  } else if (weatherIcon === "10d") {
+    description = "cloud-sun-rain";
+  } else if (weatherIcon === "10n") {
+    description = "cloud-moon-rain";
+  } else if (["11d", "11n"].includes(weatherIcon)) {
+    description = "cloud-bolt";
+  } else if (["13d", "13n"].includes(weatherIcon)) {
+    description = "snowflake";
+  } else {
+    description = "smog";
   }
   let fontAw = `<i class="fa-solid fa-${description}"></i>`;
   mainIcon.innerHTML = fontAw;
 
   let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
   weatherImg.innerHTML = imageSource;
-  
-
 }
 
 function getPosition(position) {
@@ -153,11 +162,14 @@ celsius.addEventListener("click", changeToC);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToF);
-search("Kyiv");
 
-let bodyBack = document.querySelector ("body");
+
+let bodyBack = document.querySelector("body");
 if (hour > 21 && hour < 6) {
   bodyBack.classList.add("dark");
+} else {
+  bodyBack.classList.add("light");
 }
-else { bodyBack.classList.add("light"); }
 
+search("Kyiv");
+displayForecast();

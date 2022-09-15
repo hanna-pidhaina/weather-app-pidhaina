@@ -130,14 +130,14 @@ td {
   color: white;
   font-size: 50px;
 }
-.comming-days .btn {
+.forecast {
   background: rgb(101, 153, 175, 0.8);
   text-align: center;
   border: none;
   padding: 20px 30px;
   margin: 0 0 5px 0;
 }
-.comming-days .btn:hover {
+.forecast:hover {
   border: none;
   transform: scale(1.1);
 }
