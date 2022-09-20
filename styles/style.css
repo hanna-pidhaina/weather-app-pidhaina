@@ -74,28 +74,6 @@ h3,
 h1 {
   color: white;
 }
-#temp {
-  font-size: 45px;
-}
-.active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-.celsius-position {
-  font-size: 25px;
-  position: relative;
-  bottom: 20px;
-}
-.active:hover {
-  color: black;
-}
-.fahrenheit-position {
-  font-size: 25px;
-  position: relative;
-  left: -28px;
-  top: 5px;
-} 
 
 .current-day-list {
   list-style: none;
