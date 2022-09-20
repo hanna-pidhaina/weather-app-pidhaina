@@ -58,8 +58,12 @@ function displayForecast(response) {
         <ul class="day-list">
           <li>${getDay(forecastDay.dt)}</li>
           <li class = "day-weather-icon"><i class="fa-solid fa-${description}"></i></li>
-          <li class="day">${Math.round(forecastDay.temp.max)}</li>
-          <li class="night">${Math.round(forecastDay.temp.min)}</li>
+          <li class="day"><span>${Math.round(
+            forecastDay.temp.max
+          )}</span><span>°C</span></li>
+          <li class="night"><span>${Math.round(
+            forecastDay.temp.min
+          )}</span><span>°C</span></li>
         </ul>
       </div>`; 
     }

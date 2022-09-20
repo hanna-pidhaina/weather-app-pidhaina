@@ -1,14 +1,10 @@
 body {
   font-family: "Changa", sans-serif;
-  background-size: cover;
-}
-.light {
-  background-image: url(light.jpg);
-}
-.dark {background-image: url(dark.jpg);
+  background: linear-gradient(180deg, rgba(0, 87, 183, 0.5) 31%, rgba(255, 221, 0, 0.5) 100%);
+  background-attachment: fixed;
 }
 .whole-page {
-  background: rgba(42, 113, 135, 0.8);
+  background: rgba(135, 178, 231, 0.7);
   margin: 50px auto 20px;
   border-radius: 15px;
   width: 80%;
@@ -37,11 +33,13 @@ body {
   color: white;
 }
 .submit-button:hover {
-  background: rgb(30, 79, 94);
+  background: #FFDD00;
+  color: #0057B7;
   
 }
 .current-location-button:hover {
-  background: rgb(30, 79, 94);
+  background: #FFDD00;
+  color: #0057B7;
   
 }
 
@@ -50,6 +48,7 @@ body {
 }
 .search-icon:hover {
   transform: scale(1.2);
+  color: #0057B7;
 }
 .current-location {
   color: white;
@@ -80,8 +79,8 @@ h1 {
   padding: 0;
 }
 .weather-img {
-  border-radius: 15px;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  box-shadow: 10px 5px 5px rgba(0, 87, 183, 0.3);
   width: 100%;
   display: block;
 }
@@ -95,13 +94,6 @@ td {
   list-style: none;
   text-align: center;
   padding: 10px 20px;
-}
-.circle {
-  border-radius: 50%;
-  border: solid;
-  width: 100px;
-  height: 100px;
-  color: white;
 }
 .weather-icon {
   padding: 10px;
@@ -123,10 +115,10 @@ td {
   display: inline-block;
 }
 .day {
-  color: lightblue;
+  color: #FFDD00;
 }
 .night {
-  color: #010038;
+  color: #0057B7;
 }
 .day-weather-icon {
   color: white;
@@ -139,13 +131,13 @@ td {
   margin: auto;
   color: white;
   text-align: center;
-  background-color: rgb(42, 113, 135, 0.8);
+  background: rgba(135, 178, 231, 0.7);
   padding: 10px;
   width: fit-content;
 }
  a {
-  color: lightblue;
+  color: #0057B7;
  }
  a:hover {
-  color: lightskyblue
+  color: #FFDD00;
  }
