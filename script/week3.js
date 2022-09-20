@@ -44,7 +44,6 @@ function getDay (unix) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class = "row">`;
@@ -55,8 +54,8 @@ function displayForecast(response) {
     forecastHTML =
       forecastHTML +
       `<div class="col">
-        <ul class="day-list">
-          <li>${getDay(forecastDay.dt)}</li>
+        <ul class="forecast-list">
+          <li class = "forecast-day">${getDay(forecastDay.dt)}</li>
           <li class = "day-weather-icon"><i class="fa-solid fa-${description}"></i></li>
           <li class="day"><span>${Math.round(
             forecastDay.temp.max
@@ -104,10 +103,10 @@ function showWeather(response) {
   precipitation.innerHTML = response.data.weather[0].main;
 
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind ${response.data.wind.speed} m/s`;
+  wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${Math.round(response.data.wind.speed)} m/s`;
 
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `Humidity ${response.data.main.humidity} %`;
+  humidity.innerHTML = `<i class="fa-solid fa-droplet"></i> ${response.data.main.humidity} %`;
 
   let mainIcon = document.querySelector("#main-icon");
   let weatherIcon = response.data.weather[0].icon;
@@ -173,14 +172,5 @@ searchCity.addEventListener("submit", showCity);
 let currentLocation = document.querySelector(".current-location-button");
 currentLocation.addEventListener("click", showCurrentLocation);
 
-
-
-
-let bodyBack = document.querySelector("body");
-if (hour > 21 && hour < 6) {
-  bodyBack.classList.add("dark");
-} else {
-  bodyBack.classList.add("light");
-}
 
 search("Kyiv");

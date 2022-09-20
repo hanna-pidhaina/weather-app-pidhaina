@@ -3,27 +3,42 @@ body {
   background: linear-gradient(180deg, rgba(0, 87, 183, 0.5) 31%, rgba(255, 221, 0, 0.5) 100%);
   background-attachment: fixed;
 }
-.whole-page {
+h3,
+h1 {
+  color: white;
+}
+td {
+  text-align: center;
+}
+a {
+ color: #343837;
+}
+a:hover {
+ color: #0057B7;
+}
+.main-container {
   background: rgba(135, 178, 231, 0.7);
-  margin: 50px auto 20px;
-  border-radius: 15px;
+  margin: 50px auto 0;
+  border-radius: 10px;
   width: 80%;
-  max-width: 1100px;
+  max-width: 900px;
   min-width: fit-content;
 }
 .upper-area {
   padding: 30px;
 }
+.col, .col-sm-6 {
+  margin-bottom: 10px;
+}
 #current-time {
   color: white;
-  text-decoration: none;
 }
-
 #city-input {
   border-radius: 4px;
   border-color: white;
+  outline: none;
+  color: #343837;
 }
-
 .submit-button, .current-location-button {
   border: solid;
   border-color: white;
@@ -32,27 +47,12 @@ body {
   border-radius: 4px;
   color: white;
 }
-.submit-button:hover {
+.submit-button:hover, .current-location-button:hover {
   background: #FFDD00;
-  color: #0057B7;
-  
-}
-.current-location-button:hover {
-  background: #FFDD00;
-  color: #0057B7;
-  
-}
-
-.search-icon {
-  color: white;
+  color: #0057B7;  
 }
 .search-icon:hover {
   transform: scale(1.2);
-  color: #0057B7;
-}
-.current-location {
-  color: white;
-  margin-top: 0;
 }
 .main-area {
   padding: 50px 20px;
@@ -69,14 +69,16 @@ body {
   width: 40%;
   min-width: 200px;
 }
-h3,
-h1 {
+.weather-icon {
+  padding: 10px;
   color: white;
+  font-size: 50px;
 }
-
 .current-day-list {
   list-style: none;
   padding: 0;
+  font-style: italic;
+  color: #343837;
 }
 .weather-img {
   border-radius: 50%;
@@ -84,35 +86,21 @@ h1 {
   width: 100%;
   display: block;
 }
-td {
-  text-align: center;
+.weather-forecast{
+  padding: 0 20px;
 }
-.bottom-area {
-  padding: 20px 0 100px;
-}
-.day-list {
+.forecast-list {
   list-style: none;
   text-align: center;
-  padding: 10px 20px;
+  padding: 5px 5px;
+  min-width: fit-content;
 }
-.weather-icon {
-  padding: 10px;
-  color: white;
-  font-size: 50px;
-}
-.forecast {
-  background: rgb(101, 153, 175, 0.8);
-  text-align: center;
+.forecast-list:hover {
   border: none;
-  padding: 20px 30px;
-  margin: 0 0 5px 0;
+  transform: scale(1.2);
 }
-.forecast:hover {
-  border: none;
-  transform: scale(1.1);
-}
-.comming-days {
-  display: inline-block;
+.forecast-day {
+  color: #343837;
 }
 .day {
   color: #FFDD00;
@@ -123,21 +111,8 @@ td {
 .day-weather-icon {
   color: white;
 }
-.days-icon {
-  color: white;
-  font-size: 20px;
-}
 .footer {
-  margin: auto;
-  color: white;
+  color: #343837;
   text-align: center;
-  background: rgba(135, 178, 231, 0.7);
-  padding: 10px;
-  width: fit-content;
+  padding: 5px;
 }
- a {
-  color: #0057B7;
- }
- a:hover {
-  color: #FFDD00;
- }

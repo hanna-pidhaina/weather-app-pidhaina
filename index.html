@@ -26,71 +26,72 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="container whole-page">
-      <div class="container text-center">
-        <div class="row upper-area">
-          <div class="col">
-            <span id="current-time"></span>
-          </div>
-          <div class="col-md-5 col-sm-6">
-            <form id="search-city">
-              <input type="text" id="city-input" autocomplete="off" />
-              <button type="submit" class="submit-button">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <div class="container">
+      <div class="main-container">
+        <div class="text-center">
+          <div class="row upper-area">
+            <div class="col">
+              <span id="current-time"></span>
+            </div>
+            <div class="col-sm-6">
+              <form id="search-city">
+                <input
+                  type="text"
+                  id="city-input"
+                  placeholder="Enter city name"
+                  autocomplete="off"
+                />
+                <button type="submit" class="submit-button">
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col">
+              <button class="current-location-button">
+                My <i class="fa-solid fa-location-dot"></i><br />
+                weather
               </button>
-            </form>
-            <label class="current-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Type city name
-            </label>
-          </div>
-          <div class="col">
-            <button class="current-location-button">
-              My current <br />
-              location weather
-            </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main-area">
-        <table class="table-borderless align-middle">
-          <tbody>
-            <tr>
-              <td class="table-icon">
-                <div class="circle">
-                <div id="main-icon" class = "weather-icon"></div>         
-                </div>  
-              </td>
-              <td class="table-data">
-                <h3>Current city</h3>
-                <h1>
-                  <span id="temp"> </span>
-                  <span>°C</span>
-                </h1>
-                <ul class="current-day-list">
-                  <em
-                    ><li id="precipitation"></li>
+        <div class="main-area">
+          <table class="table-borderless align-middle">
+            <tbody>
+              <tr>
+                <td class="table-icon">
+                  <div id="main-icon" class="weather-icon"></div>
+                </td>
+                <td class="table-data">
+                  <h3></h3>
+                  <h1>
+                    <span id="temp"> </span>
+                    <span>°C</span>
+                  </h1>
+                  <ul class="current-day-list">
+                    <li id="precipitation"></li>
                     <li id="wind"></li>
-                    <li id="humidity"></li></em
-                  >
-                </ul>
-              </td>
-              <td class="table-image">
-                <div id="weather-image"></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                    <li id="humidity"></li>
+                  </ul>
+                </td>
+                <td class="table-image">
+                  <div id="weather-image"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="weather-forecast" id="weather-forecast"></div>
       </div>
-      <div class = "weather-forecast" id="weather-forecast"></div>      
-    </div>
-    <div class="footer">
-      <a
-        href="https://github.com/hanna-pidhaina/weather-app-pidhaina"
-        target="_blank"
-        >Open source code
-      </a>
-      by Hanna Pidhaina
+      <div class="footer">
+        <a
+          href="https://github.com/hanna-pidhaina/weather-app-pidhaina"
+          target="_blank"
+          >Open source code
+        </a>
+        by <a href="https://www.instagram.com/hanna_pidhaina/"
+          target="_blank"> Hanna Pidhaina </a> <br />
+          Stand with Ukraine <img src="images/ukraine.png" alt="map-ukraine" width="40">
+      </div>
     </div>
     <script src="script/week3.js"></script>
   </body>
