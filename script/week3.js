@@ -35,7 +35,7 @@ let minute = currentTime.getMinutes();
 if (minute < 10) {
   minute = `0${minute}`;
 }
-time.innerHTML = `${day}, ${month} ${date}, ${hour}:${minute}`;
+time.innerHTML = `${day}, <br/> ${month} ${date}, <br/> ${hour}:${minute}`;
 function getDay (unix) {
   let data = new Date (unix*1000);
   let day = data.getDay();
