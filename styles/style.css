@@ -22,13 +22,6 @@ a:hover {
   border-radius: 10px;
   width: 80%;
   max-width: 900px;
-  min-width: fit-content;
-}
-.upper-area {
-  padding: 30px;
-}
-.col, .col-sm-6 {
-  margin-bottom: 10px;
 }
 #current-time {
   color: white;
@@ -55,19 +48,9 @@ a:hover {
   transform: scale(1.2);
 }
 .main-area {
-  padding: 20px 20px 50px;
+  padding: 10px 20px 50px;
   max-width: 700px;
   margin: auto;
-}
-.table-icon {
-  width: 20%;
-}
-.table-data {
-  width: 40%;
-}
-.table-image {
-  width: 40%;
-  min-width: 200px;
 }
 .weather-icon {
   padding: 10px;
@@ -83,8 +66,6 @@ a:hover {
 .weather-img {
   border-radius: 50%;
   box-shadow: 10px 5px 5px rgba(0, 87, 183, 0.3);
-  width: 100%;
-  display: block;
 }
 .weather-forecast{
   padding: 0 20px;

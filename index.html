@@ -27,41 +27,38 @@
   </head>
   <body>
     <div class="container">
-      <div class="main-container">
-        <div class="text-center">
-          <div class="row upper-area">
-            <div class="col">
+      <div class="container main-container">
+          <div class="row p-4 text-center">
+            <div class="col-md-3 pb-2">
               <span id="current-time"></span>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6 pb-2">
               <form id="search-city">
                 <input
                   type="text"
                   id="city-input"
                   placeholder="Enter city name"
                   autocomplete="off"
+                  class="mb-1"
                 />
                 <button type="submit" class="submit-button">
                   <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 </button>
               </form>
             </div>
-            <div class="col">
+            <div class="col-md-3">
               <button class="current-location-button">
                 My <i class="fa-solid fa-location-dot"></i><br />
                 weather
               </button>
             </div>
           </div>
-        </div>
-        <div class="main-area">
-          <table class="table-borderless align-middle">
-            <tbody>
-              <tr>
-                <td class="table-icon">
+        <div class="main-area text-center">
+          <div class="row align-items-center justify-content-around">
+                <div class="col-md-3">
                   <div id="main-icon" class="weather-icon"></div>
-                </td>
-                <td class="table-data">
+                </div>
+                <div class="col-md-3">
                   <h3></h3>
                   <h1>
                     <span id="temp"> </span>
@@ -72,13 +69,11 @@
                     <li id="wind"></li>
                     <li id="humidity"></li>
                   </ul>
-                </td>
-                <td class="table-image">
+                </div>
+                <div class="col-md-6">
                   <div id="weather-image"></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </div>
+          </div>
         </div>
         <div class="weather-forecast" id="weather-forecast"></div>
       </div>

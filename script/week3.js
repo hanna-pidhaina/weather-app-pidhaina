@@ -46,14 +46,14 @@ function getDay (unix) {
 function displayForecast(response) {
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class = "row">`;
+  let forecastHTML = `<div class = "row justify-content-around">`;
   forecastData.forEach(function(forecastDay, index){
     showIcon(forecastDay.weather[0].icon);
     if (index < 5) {
 
     forecastHTML =
       forecastHTML +
-      `<div class="col">
+      `<div class="col-sm-2">
         <ul class="forecast-list">
           <li class = "forecast-day">${getDay(forecastDay.dt)}</li>
           <li class = "day-weather-icon"><i class="fa-solid fa-${description}"></i></li>
@@ -116,7 +116,7 @@ function showWeather(response) {
 
   let fontAw = `<i class="fa-solid fa-${description}"></i>`;
   mainIcon.innerHTML = fontAw;
-  let imageSource = `<img src="images/${description}.jpg" class = "weather-img" alt="${description}" />`;
+  let imageSource = `<img src="images/${description}.jpg" class = "weather-img img-fluid" alt="${description}" />`;
   weatherImg.innerHTML = imageSource;
 
   getForecast (response.data.coord);
