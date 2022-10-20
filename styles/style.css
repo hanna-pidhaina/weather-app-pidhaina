@@ -16,7 +16,7 @@ a {
 a:hover {
  color: #0057B7;
 }
-.main-container {
+.app-container {
   background: rgba(135, 178, 231, 0.7);
   margin: 50px auto 0;
   border-radius: 10px;
@@ -47,7 +47,7 @@ a:hover {
 .search-icon:hover {
   transform: scale(1.2);
 }
-.main-area {
+.current-weather-section {
   padding: 10px 20px 50px;
   max-width: 700px;
   margin: auto;
@@ -66,9 +66,6 @@ a:hover {
 .weather-img {
   border-radius: 50%;
   box-shadow: 10px 5px 5px rgba(0, 87, 183, 0.3);
-}
-.weather-forecast{
-  padding: 0 20px;
 }
 .forecast-list {
   list-style: none;
